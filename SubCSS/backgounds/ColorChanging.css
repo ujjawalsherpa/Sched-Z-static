@@ -1,0 +1,12 @@
+body {
+    background-color: #e74c3c;
+    animation: bg-color 10s infinite;
+  }
+  @keyframes bg-color {
+    0% { background-color: #e74c3c; }
+    20% { background-color: #00d5ff; }
+    40% { background-color: #1abc9c; }
+    60% { background-color: #7902f8; }
+    80% { background-color: #9b59b6; }
+    100% { background-color: #9fee89; }
+  }

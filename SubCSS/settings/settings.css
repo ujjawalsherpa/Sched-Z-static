@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    color: #8e9194;
+}
+.sidebar {
+  margin: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+  /* Header Styles */
+  header {
+    color: #fff;
+    padding: 20px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 2;
+  }
+  .section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+  }
+  .section h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+  }
+  .section p {
+    margin: 0;
+    font-size: 16px;
+  }
+  .notification {
+    background-color: #dff0d8;
+    color: #3c763d;
+  }
+  .account {
+    background-color: #d9edf7;
+    color: #31708f;
+  }
+  .help {
+    background-color: #f2dede;
+    color: #a94442;
+  }
