@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/SubCSS/backgounds/design.css" />
+    <link rel="stylesheet" href="/SubCSS/analytics/main_analytics.css" />
+    <link rel="stylesheet" href="/SubCSS/analytics/extra_analytics.css" />
+
+    <!----===== Boxicons CSS ===== -->
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+
+    <title>Sched-Z</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ===Nav==== -->
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <a href="/index.html"> <img id="logo" src="/Photos/logo.png" alt="" /></a>
+          </span>
+
+          <div class="text logo-text">
+            <span class="name">Sched-Z</span>
+            <span class="profession">The Scheduler</span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="Home.html">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="Events.html">
+                <i class="bx bx-calendar-alt icon"></i>
+                <span class="text nav-text">Events</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="Select.html">
+                <i class="bx bx-selection icon"></i>
+                <span class="text nav-text">Select</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="Analytics1.html">
+                <i class="bx bx-pie-chart-alt icon"></i>
+                <span class="text nav-text">Analytics</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="Settings.html">
+                <i class="bx bx-cog icon"></i>
+                <span class="text nav-text">Settings</span>
+              </a>
+            </li></ul
+          >
+        </div>
+
+        <div class="bottom-content">
+          <li class="nav-link">
+            <a href="AboutUs.html">
+              <i class="bx bx- bx-question-mark icon"></i>
+              <span class="text nav-text">About Us</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <!-- === nav end==== -->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <main class="boxes">
+      <section>
+        <h2>Overall Attendance</h2>
+        <canvas id="overall-chart"></canvas>
+      </section>
+      <section>
+        <h2>Attendance by Subject</h2>
+        <canvas id="subject-chart"></canvas>
+      </section>
+      <section>
+        <h2>Attendance by Month</h2>
+        <canvas id="month-chart"></canvas>
+      </section>
+    </main>
+    <script src="/SubJS/select.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+      const overallAttendanceData = {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: "Overall Attendance",
+            data: [70, 90, 65, 80, 92, 88],
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+          },
+        ],
+      }
+
+      const subjectAttendanceData = {
+        labels: ["DSA", "Networking", "Java", "Mobile", "OS"],
+        datasets: [
+          {
+            label: "Attendance by Subject",
+            data: [70, 90, 65, 80, 92],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      }
+
+      const monthAttendanceData = {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: "Attendance by Month",
+            data: [75, 80, 90, 85, 95, 88],
+            backgroundColor: "rgba(255, 159, 64, 0.2)",
+            borderColor: "rgba(255, 159, 64, 1)",
+            borderWidth: 1,
+          },
+        ],
+      }
+
+      const overallAttendanceChart = new Chart(document.getElementById("overall-chart"), {
+        type: "line",
+        data: overallAttendanceData,
+        options: {},
+      })
+
+      const subjectAttendanceChart = new Chart(document.getElementById("subject-chart"), {
+        type: "bar",
+        data: subjectAttendanceData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      })
+
+      const monthAttendanceChart = new Chart(document.getElementById("month-chart"), {
+        type: "radar",
+        data: monthAttendanceData,
+        options: {},
+      })
+    </script>
+
+    <!-- End Footer -->
+  </body>
+</html>
