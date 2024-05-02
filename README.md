@@ -13,7 +13,7 @@ Analytics: displays attendance information for the user
 ## Installation
 To use Sched-Z, simply clone the repository and open the files in a text editor such as Visual Studio Code.
 
-### git clone https://github.com/iAayus/sched-z.git
+### git clone https://github.com/ujjawalsherpa/Sched-Z-static.git
 
 ## Usage
 The website is easy to navigate and user-friendly. Simply select your program/course, and the timetable will be displayed. The events page displays upcoming events, and the analytics page displays attendance information.
